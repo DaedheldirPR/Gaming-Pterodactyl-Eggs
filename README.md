@@ -44,7 +44,6 @@ The egg's installation script will automatically download and configure the requ
 
 * Pterodactyl Panel
 * Pterodactyl Wings
-* A compatible Docker image/runtime specified by the egg
 * Required network ports/allocations
 
 ## Backup Ports
