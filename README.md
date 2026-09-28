@@ -6,8 +6,8 @@ These eggs are designed to make installing and running dedicated servers through
 
 ## Included Eggs
 
-* **Hydro Thunder Online** — Dedicated master server
-* **GoldenEye 64 / GoldenEye Recompiled** — Dedicated server
+* **Hydro Thunder Midway's 1999 Arcade / Hydro Thunder Online** — Dedicated master server
+* **GoldenEye 007 XBLA / GoldenEye Recompiled** — Dedicated master server
 * Additional eggs may be added over time.
 
 ## Installation
