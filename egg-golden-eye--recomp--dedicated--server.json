@@ -1,0 +1,52 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-09-27T21:45:13-04:00",
+    "name": "GoldenEye-Recomp-Dedicated-Server",
+    "author": "DaedheldirPR@github.com",
+    "description": "A tiny, standalone matchmaker and UDP relay that allows players to play the GoldenEye 007 Recompiled port together online over the internet.\r\n\r\nOne person runs this server and shares its address with the other players. Everyone enters the same address in the game's **ONLINE** menu. Players can then find and join each other's matches.\r\n\r\nThis repository contains only the server. You will need the game itself to use it. See the [GoldenEye-Recomp repository](https:\/\/github.com\/SunJaycy\/GoldenEye-Recomp) for more information.",
+    "features": [],
+    "docker_images": {
+        "ghcr.io\/parkervcp\/yolks:debian": "ghcr.io\/parkervcp\/yolks:debian"
+    },
+    "file_denylist": [],
+    "startup": ".\/ge_server ${BIND_IP} ${BIND_PORT}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"GoldenEye matchmaker+relay listening on\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y git build-essential cmake g++\r\n\r\ncd \/mnt\/server\r\n\r\ngit clone https:\/\/github.com\/SunJaycy\/GoldenEye-Recomp-Server.git src\r\n\r\ncd src\r\n\r\ng++ -O2 -std=c++17 src\/server.cpp -o \/mnt\/server\/ge_server\r\n\r\nchmod +x \/mnt\/server\/ge_server",
+            "container": "debian:bullseye-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Bind IP",
+            "description": "",
+            "env_variable": "BIND_IP",
+            "default_value": "0.0.0.0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Port",
+            "description": "",
+            "env_variable": "BIND_PORT",
+            "default_value": "31000",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
