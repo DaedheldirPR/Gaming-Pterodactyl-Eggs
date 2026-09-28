@@ -1,0 +1,42 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-09-27T21:40:46-04:00",
+    "name": "Hydro-Thunder-Online-Dedicated-Server",
+    "author": "DaedheldirPR@github.com",
+    "description": "A tiny, standalone matchmaker and UDP relay that allows players to play the Hydro Thunder Windows port together over the internet.\r\n\r\nOne person runs this server and shares its address with the other players. Everyone enters the same address in the game's **PC Settings \u2192 Network \u2192 Master Server** menu. Once in-game, one player hosts a match while the others join. Players can then find and join each other's matches.\r\n\r\nThis repository contains only the server. You will need the game itself to use it. See the [HydroThunderOnline repository](https:\/\/github.com\/LANCommander\/HydroThunderOnline) for more information.",
+    "features": [],
+    "docker_images": {
+        "ghcr.io\/parkervcp\/yolks:debian": "ghcr.io\/parkervcp\/yolks:debian"
+    },
+    "file_denylist": [],
+    "startup": ".\/htmaster --port ${BIND_PORT}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"htmaster 1.0.0 on UDP port\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n\r\nset -e\r\n\r\ncd \/mnt\/server\r\n\r\necho \"Downloading Hydro Thunder Online htmaster...\"\r\n\r\ncurl -L \\\r\n    \"https:\/\/github.com\/LANCommander\/HydroThunderOnline\/releases\/download\/v1.0.0\/htmaster-v1.0.0-linux-x86_64.tar.gz\" \\\r\n    -o htmaster.tar.gz\r\n\r\necho \"Download complete.\"\r\n\r\necho \"Extracting htmaster.tar.gz...\"\r\n\r\ntar -xzf htmaster.tar.gz\r\n\r\necho \"Archive extracted.\"\r\n\r\necho \"Looking for htmaster...\"\r\n\r\nHTMASTER=$(find . -type f -name \"htmaster\" -print -quit)\r\n\r\nif [ -z \"$HTMASTER\" ]; then\r\n    echo \"ERROR: htmaster was not found.\"\r\n    echo \"Files after extraction:\"\r\n    find . -maxdepth 5 -print\r\n    exit 1\r\nfi\r\n\r\necho \"Found: $HTMASTER\"\r\n\r\necho \"Moving htmaster to server root...\"\r\n\r\nmv \"$HTMASTER\" .\/htmaster\r\n\r\nchmod +x .\/htmaster\r\n\r\necho \"Removing archive...\"\r\n\r\nrm -f htmaster.tar.gz\r\n\r\necho \"\"\r\necho \"======================================\"\r\necho \" Hydro Thunder Online installed!\"\r\necho \"======================================\"\r\necho \"\"\r\n\r\nls -lah \/mnt\/server",
+            "container": "ghcr.io\/ptero-eggs\/installers:debian",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server Port",
+            "description": "",
+            "env_variable": "BIND_PORT",
+            "default_value": "27950",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
