@@ -47,6 +47,16 @@ The egg's installation script will automatically download and configure the requ
 * A compatible Docker image/runtime specified by the egg
 * Required network ports/allocations
 
+## Backup Ports
+
+The [`BackupsOfPorts`](https://github.com/DaedheldirPR/Personal-Pterodactyl-Eggs/tree/main/BackupsOfPorts) folder contains backup copies of game ports and related projects that **were not created or developed by me**. They are included solely for preservation and backup purposes.
+
+These projects remain the work of their respective authors and are included in accordance with their applicable licenses, including the **MIT License** and **The Unlicense**. Original credits, license files, and notices have been retained where applicable.
+
+The backups contain **only the base port/server program files** and do **not** include game ROMs, ISOs, game assets, proprietary game files, or other copyrighted game content. They are intended to preserve the software projects themselves without distributing the original games or their associated content.
+
+These backups are intended to preserve working versions of these projects in case their original repositories are deleted, become unavailable, or are otherwise inaccessible. When an original repository is available, please refer to and support the original project and its creators.
+
 ## Credits
 
 These eggs may use server software created by their respective original developers. All third-party software remains under its original license.
