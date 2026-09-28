@@ -22,8 +22,8 @@ In Pterodactyl:
 
 1. Open the **Admin Panel**
 2. Go to **Nests**
-3. Select the Nest you want to use
-4. Select **Import Egg**
+3. Select **Import Egg**
+4. Select the Nest you want to use
 5. Upload the desired `.json` egg file
 
 ### 3. Create the Server
