@@ -1,0 +1,20 @@
+This file contains the original repository sources for the projects stored in the BackupsOfPorts folder.
+
+These projects are not my original work. The backups are maintained solely for preservation purposes in case the original repositories become unavailable.
+
+The original authors and projects retain their respective credits and rights. Please visit the original repositories when they are available and support the original developers.
+
+No game ROMs, ISOs, game assets, proprietary game files, or other game content are included with these backups.
+
+Projects
+Hydro Thunder Online
+Original Repository:
+https://github.com/LANCommander/HydroThunderOnline/
+GoldenEye-Recomp
+Original Repository:
+https://github.com/SunJaycy/GoldenEye-Recomp/
+Additional Projects
+
+Additional ports may be added to this folder over time. Their original repositories will be listed here along with the project name and source repository.
+
+The original source should be preferred over the backup whenever possible.
