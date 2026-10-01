@@ -10,9 +10,14 @@ Projects
 Hydro Thunder Online
 Original Repository:
 https://github.com/LANCommander/HydroThunderOnline/
+
 GoldenEye-Recomp
 Original Repository:
 https://github.com/SunJaycy/GoldenEye-Recomp/
+
+GoldenEye-Recomp-Server
+Original Repository:
+https://github.com/SunJaycy/GoldenEye-Recomp-Server/
 Additional Projects
 
 Additional ports may be added to this folder over time. Their original repositories will be listed here along with the project name and source repository.
